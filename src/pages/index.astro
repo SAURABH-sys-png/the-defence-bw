@@ -1,49 +1,121 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+// src/pages/index.astro
+import Layout from '../layouts/Layout.astro';
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This template
-				serves as a lightweight, minimally-styled starting point for anyone looking to build a personal
-				website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to
-				<a href="https://docs.astro.build/">read the docs</a>
-				or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out
-				<a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a>
-				by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
-</html>
+<Layout 
+  title="Home" 
+  description="Empowering defense aspirants with accurate eligibility calculators, previous year question papers, insightful blogs, and real SSB recommendation success stories."
+>
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden bg-white py-20 sm:py-32">
+    <!-- Subtle Background Grid/Pattern Effect -->
+    <div class="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#f0f4f8_1px,transparent_1px),linear-gradient(to_bottom,#f0f4f8_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
+    
+    <div class="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+      <span class="inline-flex items-center rounded-full bg-blue-50 px-3 py-1 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-700/10 mb-6">
+        Built for Defense Entry Aspirants
+      </span>
+      <h1 class="mx-auto max-w-4xl text-4xl font-extrabold tracking-tight text-slate-900 sm:text-6xl">
+        Your Strategic Companion for <span class="bg-gradient-to-r bg-clip-text text-transparent from-blue-600 to-indigo-600">Defense Uniform Services</span>
+      </h1>
+      <p class="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-slate-500">
+        Stop guessing your eligibility or hunting for reliable materials. Get direct access to optimized tools, verified exam archives, and proven SSB roadmap execution logs.
+      </p>
+      <div class="mt-10 flex justify-center gap-x-6">
+        <a href="/calculator" class="rounded-xl bg-blue-600 px-5 py-3 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 transition-all">
+          Check Eligibility Now
+        </a>
+        <a href="/pyqs" class="rounded-xl border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-700 shadow-sm hover:bg-slate-50 hover:text-slate-900 transition-all">
+          Download PYQs &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Platform Core Core Modules Grid -->
+  <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Everything you need to clear the cutoffs</h2>
+      <p class="mt-4 text-slate-500 max-w-xl mx-auto">Four highly optimized resource blocks designed to give your preparations an unfair structural advantage.</p>
+    </div>
+
+    <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+      
+      <!-- Card 1: Calculator -->
+      <div class="flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md transition-all">
+        <div>
+          <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-600 text-white font-bold text-lg">
+            &#128196;
+          </div>
+          <h3 class="mt-4 text-lg font-semibold text-slate-900">Eligibility Engine</h3>
+          <p class="mt-2 text-sm text-slate-500 leading-relaxed">
+            Calculate your operational entry branch cutoff criteria across physical medical constraints and age matrices instantly.
+          </p>
+        </div>
+        <a href="/calculator" class="mt-6 text-sm font-semibold text-blue-600 hover:text-blue-500 flex items-center">
+          Launch App <span class="ml-1">&rarr;</span>
+        </a>
+      </div>
+
+      <!-- Card 2: PYQ Repository -->
+      <div class="flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md transition-all">
+        <div>
+          <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-600 text-white font-bold text-lg">
+            &#128197;
+          </div>
+          <h3 class="mt-4 text-lg font-semibold text-slate-900">PYQs & Mock Papers</h3>
+          <p class="mt-2 text-sm text-slate-500 leading-relaxed">
+            Access organized, clean PDF vaults containing verified previous year question banks and performance analytics simulations.
+          </p>
+        </div>
+        <a href="/pyqs" class="mt-6 text-sm font-semibold text-emerald-600 hover:text-emerald-500 flex items-center">
+          Browse Archive <span class="ml-1">&rarr;</span>
+        </a>
+      </div>
+
+      <!-- Card 3: Deep Insights Blog -->
+      <div class="flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md transition-all">
+        <div>
+          <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-purple-600 text-white font-bold text-lg">
+            &#9997;
+          </div>
+          <h3 class="mt-4 text-lg font-semibold text-slate-900">Preparation Strategy</h3>
+          <p class="mt-2 text-sm text-slate-500 leading-relaxed">
+            Deep-dive operational breakdowns, detailed curriculum updates, dynamic current affairs, and foundational strategy notes.
+          </p>
+        </div>
+        <a href="/blog" class="mt-6 text-sm font-semibold text-purple-600 hover:text-purple-500 flex items-center">
+          Read Articles <span class="ml-1">&rarr;</span>
+        </a>
+      </div>
+
+      <!-- Card 4: Success Chronicles -->
+      <div class="flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md transition-all">
+        <div>
+          <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-amber-600 text-white font-bold text-lg">
+            &#127942;
+          </div>
+          <h3 class="mt-4 text-lg font-semibold text-slate-900">SSB Success Logs</h3>
+          <p class="mt-2 text-sm text-slate-500 leading-relaxed">
+            Deconstruct precise behavioral logs, real screening experiences, and field recommendations from successful candidates.
+          </p>
+        </div>
+        <a href="/stories" class="mt-6 text-sm font-semibold text-amber-600 hover:text-amber-500 flex items-center">
+          Explore Profiles <span class="ml-1">&rarr;</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Quick Trust Factor / Vision Banner -->
+  <section class="bg-slate-900 text-white py-16">
+    <div class="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold tracking-tight sm:text-3xl">Built for those who value precise metrics.</h2>
+      <p class="mx-auto mt-4 max-w-xl text-sm text-slate-400">
+        No dynamic algorithmic clutter or distracting loops. Just clean layouts, lightning-fast pages, and accurate, standard entry tracking resources.
+      </p>
+    </div>
+  </section>
+</Layout>
