@@ -32,7 +32,7 @@ export default function BlogBody() {
   }
   return (
     <div className="p-6 space-y-4 max-w-2xl mx-auto">
-      <h2 className="text-2xl font-bold mb-4 text-gray-800">Sorted JSON Documents</h2>
+      <h2 className="text-2xl font-bold mb-4 text-gray-800">Blogs</h2>
       
       {blogs.map((item, index) => (
         <div 
