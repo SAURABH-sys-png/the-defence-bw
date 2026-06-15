@@ -1,23 +1,29 @@
 {
-  "name": "",
+  "name": "course-prc",
+  "private": true,
+  "version": "0.0.0",
   "type": "module",
-  "version": "0.0.1",
-  "engines": {
-    "node": ">=22.12.0"
-  },
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
   },
   "dependencies": {
-    "@astrojs/mdx": "^6.0.3",
-    "@astrojs/rss": "^4.0.18",
-    "@astrojs/sitemap": "^3.7.3",
     "@tailwindcss/vite": "^4.3.0",
-    "astro": "^6.4.6",
-    "sharp": "^0.34.3",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
     "tailwindcss": "^4.3.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "eslint": "^10.3.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.2",
+    "globals": "^17.6.0",
+    "vite": "^8.0.12"
   }
 }
