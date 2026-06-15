@@ -140,3 +140,169 @@ hr {
 	/* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
 	white-space: nowrap;
 }
+
+/* Custom Scrollbar Styling */
+.custom-scrollbar {
+	scrollbar-width: thin;
+	scrollbar-color: rgb(203, 213, 225) rgb(248, 250, 252);
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+	width: 8px;
+	height: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+	background: rgb(248, 250, 252);
+	border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+	background: rgb(203, 213, 225);
+	border-radius: 10px;
+	transition: background 0.3s ease;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+	background: rgb(148, 163, 184);
+}
+
+/* Enhanced Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	text-wrap: balance;
+}
+
+/* Better Link Styling */
+a {
+	transition: color 0.2s ease;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+/* Code Block Improvements */
+pre {
+	background-color: rgb(var(--gray-light));
+	overflow-x: auto;
+	border: 1px solid rgba(var(--gray), 20%);
+	box-shadow: 0 1px 3px rgba(var(--gray), 10%);
+}
+
+/* Table Styling */
+table {
+	border-collapse: collapse;
+	margin: 1.5em 0;
+}
+
+table th,
+table td {
+	padding: 0.75em;
+	border: 1px solid rgb(var(--gray-light));
+	text-align: left;
+}
+
+table th {
+	background-color: rgb(var(--gray-light));
+	font-weight: 700;
+}
+
+table tr:hover {
+	background-color: rgba(var(--gray-light), 50%);
+}
+
+/* Blockquote Improvements */
+blockquote {
+	background-color: rgba(var(--gray-light), 30%);
+	padding: 1em 0 1em 1.5em;
+	border-radius: 4px;
+	font-style: italic;
+}
+
+/* List Styling */
+ul,
+ol {
+	margin: 1em 0;
+	padding-left: 2em;
+}
+
+li {
+	margin: 0.5em 0;
+}
+
+/* Button Styling */
+button,
+input[type="button"],
+input[type="submit"] {
+	padding: 0.5em 1em;
+	border: 1px solid var(--accent);
+	border-radius: 4px;
+	background-color: var(--accent);
+	color: white;
+	cursor: pointer;
+	font-weight: 600;
+	transition: all 0.3s ease;
+}
+
+button:hover,
+input[type="button"]:hover,
+input[type="submit"]:hover {
+	background-color: var(--accent-dark);
+	border-color: var(--accent-dark);
+	transform: translateY(-2px);
+	box-shadow: var(--box-shadow);
+}
+
+/* Responsive Images */
+img {
+	display: block;
+	margin: 1em 0;
+}
+
+/* Article Card Improvements (for blog listings) */
+article {
+	transition: all 0.3s ease;
+}
+
+article:hover {
+	transform: translateY(-2px);
+}
+
+/* Smooth Transitions */
+* {
+	transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Mobile Responsive Improvements */
+@media (max-width: 640px) {
+	:root {
+		font-size: 16px;
+	}
+	
+	h1 {
+		font-size: 2rem;
+	}
+	
+	h2 {
+		font-size: 1.5rem;
+	}
+	
+	h3 {
+		font-size: 1.25rem;
+	}
+	
+	table {
+		font-size: 0.875em;
+	}
+	
+	pre {
+		padding: 1em;
+		font-size: 0.875em;
+	}
+}
