@@ -6,7 +6,7 @@ export function Header() {
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo */}
         <h1 className="text-xl font-bold tracking-wider text-indigo-400">
-          MyBrand
+          DefenceRoger
         </h1>
 
         {/* Navigation Links */}
@@ -15,10 +15,16 @@ export function Header() {
             Home
           </a>
           <a href="#" className="hover:text-indigo-400 transition-colors">
-            About
+            SSB Stories
           </a>
           <a href="#" className="hover:text-indigo-400 transition-colors">
-            Contact
+            PYQ's & Mocks
+          </a>
+          <a href="#" className="hover:text-indigo-400 transition-colors">
+            Eligibility Calculator
+          </a>
+          <a href="#" className="hover:text-indigo-400 transition-colors">
+            About Us
           </a>
         </nav>
       </div>
