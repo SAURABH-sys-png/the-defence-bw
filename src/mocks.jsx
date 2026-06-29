@@ -289,7 +289,7 @@ export default function MocksAndPYQs() {
           {/* Sidebar Ads Panel (2) */}
           <div className="bg-white rounded-2xl border border-slate-100 p-5 shadow-sm space-y-4">
             <span className="bg-slate-100 text-slate-500 text-[10px] uppercase font-bold tracking-widest px-2 py-0.5 rounded">Ad Spot</span>
-            <div className="aspect-[4/3] bg-gradient-to-tr from-slate-900 to-indigo-950 rounded-xl flex flex-col justify-center items-center text-center p-4 border border-indigo-800/10 text-white">
+            <div className="aspect-4/3 bg-linear-to-tr from-slate-900 to-indigo-950 rounded-xl flex flex-col justify-center items-center text-center p-4 border border-indigo-800/10 text-white">
               <h5 className="font-bold text-sm">NDA Mathematics Mock Test Series</h5>
               <p className="text-slate-300 text-[10px] mt-1 font-light">30 Mock tests aligned with UPSC pattern.</p>
               <button className="bg-white hover:bg-slate-100 text-indigo-950 font-extrabold py-1 px-3 rounded text-[10px] mt-3.5 shadow-sm">
