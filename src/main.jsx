@@ -19,22 +19,17 @@ function App() {
       home: "DefenceRoger | UPSC NDA, CDS, AFCAT Preparation Blogs & SSB Tips",
       "ssb-stories":
         "SSB Recommended Success Stories | Services Selection Board Achievers",
-      mocks:
-        "Download UPSC NDA, CDS, AFCAT PYQs & Practice Mock Test PDFs",
+      mocks: "Download UPSC NDA, CDS, AFCAT PYQs & Practice Mock Test PDFs",
       calculator:
         "Defence Eligibility Calculator | Check Age Limits & Attempt Limits",
       about: "About Us | Meet the Creators of DefenceRoger",
-      "Test Series":
-        "Test Series | NDA, CDS & AFCAT Mock Tests Coming Soon",
+      "Test Series": "Test Series | NDA, CDS & AFCAT Mock Tests Coming Soon",
     };
 
     document.title =
-      titles[currentView] ||
-      "DefenceRoger | Defence Eligibility & Resources";
+      titles[currentView] || "DefenceRoger | Defence Eligibility & Resources";
 
-    let metaDescription = document.querySelector(
-      'meta[name="description"]'
-    );
+    let metaDescription = document.querySelector('meta[name="description"]');
 
     if (!metaDescription) {
       metaDescription = document.createElement("meta");
@@ -43,8 +38,7 @@ function App() {
     }
 
     const descriptions = {
-      home:
-        "Read premium blogs, tips, and strategies for UPSC NDA, CDS, AFCAT preparation and Services Selection Board (SSB) interviews.",
+      home: "Prepare for NDA, CDS, AFCAT, CAPF and other Indian Defence exams with DefenceRoger. Get free mock tests, previous year papers (PYQs), SSB interview guidance, defence eligibility calculator, exam syllabus, preparation tips, study resources, and the latest defence exam updates.",
       "ssb-stories":
         "Read 10+ inspiring, recommended stories of candidates who cleared various SSBs for Army, Navy, and Air Force.",
       mocks:
@@ -84,14 +78,9 @@ function App() {
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 flex flex-col justify-between">
       <div>
-        <Header
-          currentView={currentView}
-          setCurrentView={setCurrentView}
-        />
+        <Header currentView={currentView} setCurrentView={setCurrentView} />
 
-        <main className="container mx-auto px-4 py-8">
-          {renderBody()}
-        </main>
+        <main className="container mx-auto px-4 py-8">{renderBody()}</main>
       </div>
 
       <footer className="bg-slate-900 text-slate-400 py-8 border-t border-slate-800">
@@ -101,8 +90,8 @@ function App() {
               DefenceRoger
             </h4>
             <p className="text-slate-400 font-light leading-relaxed">
-              Your comprehensive platform for defence exam eligibility,
-              previous year question banks, and SSB interview success stories.
+              Your comprehensive platform for defence exam eligibility, previous
+              year question banks, and SSB interview success stories.
             </p>
           </div>
 
@@ -195,5 +184,5 @@ function App() {
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>
+  </React.StrictMode>,
 );
