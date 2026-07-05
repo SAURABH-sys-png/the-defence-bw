@@ -1,39 +1,30 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import blogsData from "./blogs";
+import { slugify } from "./utils/slugify";
 
 export default function BlogBody() {
-  const [blogs, setBlogs] = useState([]);
+  const [blogItems, setBlogItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
-  const [activeBlog, setActiveBlog] = useState(null); // Detail modal
+  //const [activeBlog, setActiveBlog] = useState(null); // Detail modal
+
+  const navigate = useNavigate();
 
   useEffect(() => {
-    async function loadAndSort() {
-      // Eager import all blog JSONs
-      const BlogsFiles = import.meta.glob("./blogs/*.json", { eager: true });
-      const BlogsArrayObj = Object.keys(BlogsFiles).map((filepath) => {
-        const content = BlogsFiles[filepath].default || BlogsFiles[filepath];
-        return {
-          __filepath: filepath,
-          ...content,
-        };
-      });
-      // Sort by date descending
-      BlogsArrayObj.sort((a, b) => {
-        const dateA = a.date || a.datetime;
-        const dateB = b.date || b.datetime;
-        return new Date(dateB) - new Date(dateA);
-      });
-      setBlogs(BlogsArrayObj);
-      setLoading(false);
-    }
-    loadAndSort();
+    const sorted = [...blogsData].sort((a, b) => {
+      return new Date(b.date || b.datetime) - new Date(a.date || a.datetime);
+    });
+
+    setBlogItems(sorted);
+    setLoading(false);
   }, []);
 
   const categories = ["All", "NDA", "CDS", "AFCAT", "SSB", "General"];
 
   // Filter logic
-  const filteredBlogs = blogs.filter((blog) => {
+  const filteredBlogs = blogItems.filter((blog) => {
     const matchesSearch =
       (blog.title &&
         blog.title.toLowerCase().includes(searchTerm.toLowerCase())) ||
@@ -72,8 +63,8 @@ export default function BlogBody() {
         </h1>
 
         <p className="relative text-slate-300 max-w-xl mx-auto mt-3 text-sm md:text-base font-light">
-          Prepare for NDA, CDS, AFCAT and SSB Interviews with free
-          study material, previous year question papers (PYQs), mock tests,
+          Prepare for NDA, CDS, AFCAT and SSB Interviews with free study
+          material, previous year question papers (PYQs), mock tests,
           eligibility guides, exam syllabus, preparation strategy, fitness tips,
           current affairs and the latest Indian Army, Navy & Air Force exam
           updates.
@@ -189,10 +180,12 @@ export default function BlogBody() {
                       ).toLocaleDateString()}
                     </div>
                     <button
-                      onClick={() => setActiveBlog(blog)}
+                      onClick={() =>
+                        navigate(`/blogs/${blog.slug || slugify(blog.title)}`)
+                      }
                       className="text-xs text-indigo-600 font-bold hover:text-indigo-700 flex items-center gap-1 group-hover:translate-x-0.5 transition-transform"
                     >
-                      Read Full &rarr;
+                      Read Full →
                     </button>
                   </div>
                 </div>
@@ -285,85 +278,6 @@ export default function BlogBody() {
           </div>
         </div>
       </div>
-
-      {/* Blog Details Modal */}
-      {activeBlog && (
-        <div className="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-50 flex justify-center items-center p-4 overflow-y-auto animate-fade-in">
-          <div className="bg-white rounded-2xl max-w-2xl w-full shadow-2xl border border-slate-100 overflow-hidden flex flex-col max-h-[85vh]">
-            {/* Modal Header */}
-            <div className="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 p-6 text-white relative">
-              <button
-                onClick={() => setActiveBlog(null)}
-                className="absolute top-4 right-4 bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors text-white"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-4 w-4"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2.5}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              </button>
-
-              <span className="text-[10px] bg-indigo-500/20 border border-indigo-400/20 text-indigo-300 font-bold uppercase tracking-widest px-2.5 py-1 rounded-full">
-                {activeBlog.category || "General"}
-              </span>
-              <h3 className="text-2xl font-bold mt-3 tracking-tight">
-                {activeBlog.title || activeBlog.event}
-              </h3>
-              <p className="text-xs text-indigo-300 mt-1">
-                Published on{" "}
-                {new Date(
-                  activeBlog.date || activeBlog.datetime,
-                ).toLocaleDateString()}{" "}
-                • By {activeBlog.author || "Editorial Team"}
-              </p>
-            </div>
-
-            {/* Modal Body */}
-            <div className="p-6 md:p-8 overflow-y-auto space-y-6">
-              {/* Ad section inside modal */}
-              <div className="bg-indigo-50/50 border border-indigo-100 rounded-lg p-3 text-center text-indigo-700 text-[10px] flex items-center justify-between">
-                <span>
-                  🎯 <strong>Prepare with DefenceRoger:</strong> Get official
-                  CDS/NDA study guides.
-                </span>
-                <span className="text-indigo-600 hover:underline cursor-pointer font-bold">
-                  Download App &rarr;
-                </span>
-              </div>
-
-              <div className="space-y-4">
-                <p className="text-slate-700 text-sm md:text-base leading-relaxed whitespace-pre-line">
-                  {activeBlog.data}
-                </p>
-              </div>
-
-              <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400">
-                <span>Syllabus: NDA, CDS, AFCAT, UPSC, SSB Interview</span>
-                <span>DefenceRoger Portal</span>
-              </div>
-            </div>
-
-            {/* Modal Footer */}
-            <div className="bg-slate-50 border-t border-slate-100 px-6 py-4 flex justify-end">
-              <button
-                onClick={() => setActiveBlog(null)}
-                className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-6 rounded-lg text-xs transition duration-200 shadow-sm"
-              >
-                Close Article
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 }

@@ -1,12 +1,22 @@
 import React, { useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
-// Destructure setCurrentView and currentView from props
-export function Header({ currentView, setCurrentView }) {
+export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
-  const handleNavigation = (view) => {
-    setCurrentView(view);
+  const handleNavigation = (path) => {
+    navigate(path);
     setMenuOpen(false);
+  };
+
+  const isActive = (path) => {
+    if (path === "/") {
+      return location.pathname === "/";
+    }
+
+    return location.pathname.startsWith(path);
   };
 
   return (
@@ -14,7 +24,7 @@ export function Header({ currentView, setCurrentView }) {
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo - clicking it returns home */}
         <h1
-          onClick={() => handleNavigation("home")}
+          onClick={() => handleNavigation("/")}
           className="text-xl font-bold tracking-wider text-indigo-400 cursor-pointer"
         >
           DefenceRoger
@@ -23,66 +33,54 @@ export function Header({ currentView, setCurrentView }) {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-6">
           <button
-            onClick={() => handleNavigation("home")}
+            onClick={() => handleNavigation("/")}
             className={`transition-colors font-medium ${
-              currentView === "home"
-                ? "text-indigo-400 font-bold"
-                : "text-white hover:text-indigo-400"
+              isActive("/") ? "text-indigo-400 font-bold" : "text-white hover:text-indigo-400"
             }`}
           >
             Home
           </button>
 
           <button
-            onClick={() => handleNavigation("ssb-stories")}
+            onClick={() => handleNavigation("/ssb-stories")}
             className={`transition-colors font-medium ${
-              currentView === "ssb-stories"
-                ? "text-indigo-400 font-bold"
-                : "text-white hover:text-indigo-400"
+              isActive("/ssb-stories") ? "text-indigo-400 font-bold" : "text-white hover:text-indigo-400"
             }`}
           >
             SSB Stories
           </button>
 
           <button
-            onClick={() => handleNavigation("mocks")}
+            onClick={() => handleNavigation("/mocks")}
             className={`transition-colors font-medium ${
-              currentView === "mocks"
-                ? "text-indigo-400 font-bold"
-                : "text-white hover:text-indigo-400"
+              isActive("/mocks") ? "text-indigo-400 font-bold" : "text-white hover:text-indigo-400"
             }`}
           >
             PYQ's & Mocks
           </button>
 
           <button
-            onClick={() => handleNavigation("Test Series")}
+            onClick={() => handleNavigation("/test-series")}
             className={`transition-colors font-medium ${
-              currentView === "Test Series"
-                ? "text-indigo-400 font-bold"
-                : "text-white hover:text-indigo-400"
+              isActive("/test-series") ? "text-indigo-400 font-bold" : "text-white hover:text-indigo-400"
             }`}
           >
             Test Series
           </button>
 
           <button
-            onClick={() => handleNavigation("calculator")}
+            onClick={() => handleNavigation("/calculator")}
             className={`transition-colors font-medium ${
-              currentView === "calculator"
-                ? "text-indigo-400 font-bold"
-                : "text-white hover:text-indigo-400"
+              isActive("/calculator") ? "text-indigo-400 font-bold" : "text-white hover:text-indigo-400"
             }`}
           >
             Eligibility Calculator
           </button>
 
           <button
-            onClick={() => handleNavigation("about")}
+            onClick={() => handleNavigation("/about")}
             className={`transition-colors font-medium ${
-              currentView === "about"
-                ? "text-indigo-400 font-bold"
-                : "text-white hover:text-indigo-400"
+              isActive("/about") ? "text-indigo-400 font-bold" : "text-white hover:text-indigo-400"
             }`}
           >
             About Us
@@ -124,66 +122,54 @@ export function Header({ currentView, setCurrentView }) {
       {menuOpen && (
         <nav className="md:hidden bg-slate-800 border-t border-slate-700 flex flex-col">
           <button
-            onClick={() => handleNavigation("home")}
+            onClick={() => handleNavigation("/")}
             className={`px-6 py-3 text-left transition-colors ${
-              currentView === "home"
-                ? "text-indigo-400 font-bold"
-                : "hover:bg-slate-700"
+              isActive("/") ? "text-indigo-400 font-bold" : "hover:bg-slate-700"
             }`}
           >
             Home
           </button>
 
           <button
-            onClick={() => handleNavigation("ssb-stories")}
+            onClick={() => handleNavigation("/ssb-stories")}
             className={`px-6 py-3 text-left transition-colors ${
-              currentView === "ssb-stories"
-                ? "text-indigo-400 font-bold"
-                : "hover:bg-slate-700"
+              isActive("/ssb-stories") ? "text-indigo-400 font-bold" : "hover:bg-slate-700"
             }`}
           >
             SSB Stories
           </button>
 
           <button
-            onClick={() => handleNavigation("mocks")}
+            onClick={() => handleNavigation("/mocks")}
             className={`px-6 py-3 text-left transition-colors ${
-              currentView === "mocks"
-                ? "text-indigo-400 font-bold"
-                : "hover:bg-slate-700"
+              isActive("/mocks") ? "text-indigo-400 font-bold" : "hover:bg-slate-700"
             }`}
           >
             PYQ's & Mocks
           </button>
 
           <button
-            onClick={() => handleNavigation("Test Series")}
+            onClick={() => handleNavigation("/test-series")}
             className={`px-6 py-3 text-left transition-colors ${
-              currentView === "Test Series"
-                ? "text-indigo-400 font-bold"
-                : "hover:bg-slate-700"
+              isActive("/test-series") ? "text-indigo-400 font-bold" : "hover:bg-slate-700"
             }`}
           >
             Test Series
           </button>
 
           <button
-            onClick={() => handleNavigation("calculator")}
+            onClick={() => handleNavigation("/calculator")}
             className={`px-6 py-3 text-left transition-colors ${
-              currentView === "calculator"
-                ? "text-indigo-400 font-bold"
-                : "hover:bg-slate-700"
+              isActive("/calculator") ? "text-indigo-400 font-bold" : "hover:bg-slate-700"
             }`}
           >
             Eligibility Calculator
           </button>
 
           <button
-            onClick={() => handleNavigation("about")}
+            onClick={() => handleNavigation("/about")}
             className={`px-6 py-3 text-left transition-colors ${
-              currentView === "about"
-                ? "text-indigo-400 font-bold"
-                : "hover:bg-slate-700"
+              isActive("/about") ? "text-indigo-400 font-bold" : "hover:bg-slate-700"
             }`}
           >
             About Us

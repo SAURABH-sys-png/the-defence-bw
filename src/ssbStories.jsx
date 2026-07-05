@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { slugify } from "./utils/slugify";
 
 export default function SSBStories() {
   const [stories, setStories] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedEntry, setSelectedEntry] = useState("All");
-  const [activeStory, setActiveStory] = useState(null); // For detail modal
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function loadAndSort() {
@@ -15,7 +17,8 @@ export default function SSBStories() {
         const content = StoriesFiles[filepath].default || StoriesFiles[filepath];
         return {
           __filepath: filepath,
-          ...content
+          ...content,
+          slug: slugify(content.name || content.title || filepath),
         };
       });
       // Sort stories by date descending
@@ -149,7 +152,7 @@ export default function SSBStories() {
                 <div className="mt-6 pt-4 border-t border-slate-50 flex items-center justify-between">
                   <span className="text-xs text-slate-400 italic">Read Success Journey</span>
                   <button
-                    onClick={() => setActiveStory(story)}
+                    onClick={() => navigate(`/ssb-stories/${story.slug}`)}
                     className="text-xs text-indigo-600 font-bold hover:text-indigo-700 flex items-center gap-1 group-hover:translate-x-0.5 transition-transform"
                   >
                     Read Story &rarr;
@@ -158,65 +161,6 @@ export default function SSBStories() {
               </div>
             </div>
           ))}
-        </div>
-      )}
-
-      {/* Story Detail Modal */}
-      {activeStory && (
-        <div className="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-50 flex justify-center items-center p-4 overflow-y-auto animate-fade-in">
-          <div className="bg-white rounded-2xl max-w-2xl w-full shadow-2xl border border-slate-100 overflow-hidden flex flex-col max-h-[85vh]">
-            
-            {/* Modal Header */}
-            <div className="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 p-6 text-white relative">
-              <button
-                onClick={() => setActiveStory(null)}
-                className="absolute top-4 right-4 bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors text-white"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-              
-              <span className="text-[10px] bg-indigo-500/20 border border-indigo-400/20 text-indigo-300 font-bold uppercase tracking-widest px-2.5 py-1 rounded-full">
-                {activeStory.entry} Entry
-              </span>
-              <h3 className="text-2xl font-bold mt-3 tracking-tight">{activeStory.name}</h3>
-              <p className="text-xs text-indigo-300 mt-1">{activeStory.ssb} • {activeStory.recommendation}</p>
-            </div>
-
-            {/* Modal Body */}
-            <div className="p-6 md:p-8 overflow-y-auto space-y-6">
-              
-              {/* Ad section inside modal */}
-              <div className="bg-slate-50 border border-slate-200 rounded-lg p-3 text-center text-slate-500 text-[10px] flex items-center justify-between">
-                <span>📚 <strong>Crack SSB:</strong> Practice psychological tests online!</span>
-                <span className="text-indigo-600 hover:underline cursor-pointer font-bold">Try Now &rarr;</span>
-              </div>
-
-              <div className="space-y-4">
-                <h4 className="text-sm uppercase tracking-wider text-slate-400 font-semibold">The Success Journey</h4>
-                <p className="text-slate-700 text-sm md:text-base leading-relaxed whitespace-pre-line">
-                  {activeStory.data}
-                </p>
-              </div>
-
-              <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400">
-                <span>Published on {new Date(activeStory.date).toLocaleDateString()}</span>
-                <span>DefenceRoger recommended cadet</span>
-              </div>
-            </div>
-
-            {/* Modal Footer */}
-            <div className="bg-slate-50 border-t border-slate-100 px-6 py-4 flex justify-end">
-              <button
-                onClick={() => setActiveStory(null)}
-                className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-6 rounded-lg text-xs transition duration-200 shadow-sm"
-              >
-                Close Story
-              </button>
-            </div>
-
-          </div>
         </div>
       )}
     </div>
