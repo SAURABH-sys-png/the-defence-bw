@@ -22,12 +22,6 @@ export default function MocksAndPYQs() {
     return matchesSearch && matchesExam && matchesCategory;
   });
 
-  const handleDownload = (item) => {
-    // Check if the file actually exists or show a friendly demo alert
-    // In production, this would trigger a standard browser download link
-    alert(`Starting download for ${item.title} (${item.size})...\nNote: In a live environment, this download resolves to: ${item.pdfUrl}`);
-  };
-
   return (
     <div className="max-w-6xl mx-auto p-4 md:p-6 font-sans">
       
@@ -180,15 +174,17 @@ export default function MocksAndPYQs() {
 
                   <div className="flex flex-row md:flex-col items-center md:items-end justify-between md:justify-start gap-2 pt-3 md:pt-0 border-t border-slate-50 md:border-0">
                     <span className="text-xs text-slate-400 font-semibold uppercase">{item.size}</span>
-                    <button
-                      onClick={() => handleDownload(item)}
-                      className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-5 rounded-lg text-xs transition duration-200 shadow-sm flex items-center gap-1.5"
+                    <a
+                      href={item.pdfUrl}
+                      download
+                      className="inline-flex items-center gap-1.5 bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-5 rounded-lg text-xs transition duration-200 shadow-sm"
+                      aria-label={`Download ${item.title}`}
                     >
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                       </svg>
                       Download PDF
-                    </button>
+                    </a>
                   </div>
                 </div>
               ))}

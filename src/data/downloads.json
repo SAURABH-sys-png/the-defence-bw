@@ -1,82 +1,42 @@
 [
   {
-    "id": "pyq-nda-2026-math",
-    "title": "NDA (II) 2026 GAT Question Paper",
-    "category": "pyq",
-    "exam": "NDA",
-    "year": 2026,
-    "size": "2.1 MB",
-    "pdfUrl": "/pdfs/pyq/QP-NDA-NA-I-26-GENERAL-ABILITY-TEST-130426.pdf",
-    "description": "Official UPSC Mathematics question paper for NDA (I) 2026. Contains 120 questions covering Algebra, Trigonometry, Analytical Geometry, Differential Calculus, Vector Algebra, Probability, and Statistics."
-  },
-  {
     "id": "pyq-nda-2026-gat",
-    "title": "NDA (I) 2026 General Ability Test (GAT) Paper",
+    "title": "NDA (I) 2026 General Ability Test (GAT)",
     "category": "pyq",
     "exam": "NDA",
     "year": 2026,
     "size": "3.4 MB",
-    "pdfUrl": "/pdfs/pyq/nda_i_2026_gat.pdf",
-    "description": "Official UPSC General Ability Test (GAT) paper for NDA (I) 2026. Section A includes English grammar and comprehension, and Section B covers Physics, Chemistry, General Science, History, Geography, and Current Affairs."
+    "pdfUrl": "/pdfs/pyq/QP-NDA-NA-I-26-GENERAL-ABILITY-TEST-130426.pdf",
+    "description": "Official UPSC NDA question paper covering English, Physics, Chemistry, General Science, History, Geography, and Current Affairs."
   },
   {
-    "id": "pyq-cds-2026-english",
-    "title": "CDS (I) 2026 English Question Paper",
+    "id": "pyq-nda-2026-math",
+    "title": "NDA (I) 2026 Mathematics Question Paper",
     "category": "pyq",
-    "exam": "CDS",
-    "year": 2026,
-    "size": "1.8 MB",
-    "pdfUrl": "/pdfs/pyq/cds_i_2026_english.pdf",
-    "description": "Official UPSC CDS (I) 2026 English language question paper. Features 120 questions testing synonyms, antonyms, spotting errors, reading comprehension, idioms, cloze test, and ordering of sentences."
-  },
-  {
-    "id": "pyq-cds-2026-gk",
-    "title": "CDS (I) 2026 General Knowledge Paper",
-    "category": "pyq",
-    "exam": "CDS",
-    "year": 2026,
-    "size": "2.8 MB",
-    "pdfUrl": "/pdfs/pyq/cds_i_2026_gk.pdf",
-    "description": "Official UPSC CDS (I) 2026 General Knowledge question paper. Contains comprehensive questions from General Science, Indian History, World & Indian Geography, Indian Polity, Economy, and Current Affairs."
-  },
-  {
-    "id": "pyq-afcat-2025-memory",
-    "title": "AFCAT (II) 2025 Memory Based Question Paper",
-    "category": "pyq",
-    "exam": "AFCAT",
-    "year": 2025,
-    "size": "1.2 MB",
-    "pdfUrl": "/pdfs/pyq/afcat_ii_2025_memory.pdf",
-    "description": "Memory-based compiled question paper for AFCAT (II) 2025. Features questions from Verbal Ability, Numerical Ability, Reasoning, Military Aptitude, and General Awareness sections."
-  },
-  {
-    "id": "mock-nda-math-1",
-    "title": "NDA Mathematics Mock Test - 01",
-    "category": "mock",
     "exam": "NDA",
     "year": 2026,
-    "size": "1.5 MB",
-    "pdfUrl": "/pdfs/mocks/nda_math_mock_01.pdf",
-    "description": "High-yield mock test designed by DefenceRoger experts for NDA aspirants. Includes 120 questions with detailed solutions covering Calculus, Coordinate Geometry, Matrices, and Trigonometry."
+    "size": "2.1 MB",
+    "pdfUrl": "/pdfs/pyq/QP-NDA-NA-I-26-MATHEMATICS-130426.pdf",
+    "description": "Official UPSC NDA Mathematics question paper with Algebra, Trigonometry, Geometry, Calculus, and Statistics questions."
   },
   {
-    "id": "mock-cds-gk-1",
-    "title": "CDS General Knowledge Mock Test - 01",
-    "category": "mock",
-    "exam": "CDS",
-    "year": 2026,
-    "size": "2.2 MB",
-    "pdfUrl": "/pdfs/mocks/cds_gk_mock_01.pdf",
-    "description": "Full-length mock exam for CDS General Knowledge. Features handpicked questions on Indian Constitution, Modern History, General Science, and recent National/International Defence news."
+    "id": "pyq-nda-2025-gat",
+    "title": "NDA (II) 2025 General Ability Test (GAT)",
+    "category": "pyq",
+    "exam": "NDA",
+    "year": 2025,
+    "size": "3.1 MB",
+    "pdfUrl": "/pdfs/pyq/QP-NDANA-II-25-GENERAL-ABILITY-TEST-150925.pdf",
+    "description": "Official UPSC NDA (II) 2025 GAT question paper featuring English, General Knowledge, and current affairs questions."
   },
   {
-    "id": "mock-afcat-full-1",
-    "title": "AFCAT Full Length Mock Test - 01",
-    "category": "mock",
-    "exam": "AFCAT",
-    "year": 2026,
-    "size": "1.4 MB",
-    "pdfUrl": "/pdfs/mocks/afcat_mock_01.pdf",
-    "description": "Complete mock test matching the latest AFCAT online exam pattern. Consists of 100 questions from English, GK, Numerical Ability, and Reasoning and Aptitude with answers."
+    "id": "pyq-nda-2025-math",
+    "title": "NDA (II) 2025 Mathematics Question Paper",
+    "category": "pyq",
+    "exam": "NDA",
+    "year": 2025,
+    "size": "2.5 MB",
+    "pdfUrl": "/pdfs/pyq/QP-NDANA-II-25-MATHEMATICS-150925.pdf",
+    "description": "Official UPSC NDA (II) 2025 Mathematics question paper with solved and unsolved problems across all key topics."
   }
 ]
