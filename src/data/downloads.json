@@ -6,7 +6,7 @@
     "exam": "NDA",
     "year": 2026,
     "size": "3.4 MB",
-    "pdfUrl": "/pdfs/pyq/QP-NDA-NA-I-26-GENERAL-ABILITY-TEST-130426.pdf",
+    "pdfUrl": "/pdfs/nda-pyqs/QP-NDA-NA-I-26-GENERAL-ABILITY-TEST-130426.pdf",
     "description": "Official UPSC NDA question paper covering English, Physics, Chemistry, General Science, History, Geography, and Current Affairs."
   },
   {
@@ -16,7 +16,7 @@
     "exam": "NDA",
     "year": 2026,
     "size": "2.1 MB",
-    "pdfUrl": "/pdfs/pyq/QP-NDA-NA-I-26-MATHEMATICS-130426.pdf",
+    "pdfUrl": "/pdfs/nda-pyqs/QP-NDA-NA-I-26-MATHEMATICS-130426.pdf",
     "description": "Official UPSC NDA Mathematics question paper with Algebra, Trigonometry, Geometry, Calculus, and Statistics questions."
   },
   {
@@ -26,8 +26,8 @@
     "exam": "NDA",
     "year": 2025,
     "size": "3.1 MB",
-    "pdfUrl": "/pdfs/pyq/QP-NDANA-II-25-GENERAL-ABILITY-TEST-150925.pdf",
-    "description": "Official UPSC NDA (II) 2025 GAT question paper featuring English, General Knowledge, and current affairs questions."
+    "pdfUrl": "/pdfs/nda-pyqs/QP-NDANA-II-25-GENERAL-ABILITY-TEST-150925.pdf",
+    "description": "Official UPSC NDA question paper covering English, Physics, Chemistry, General Science, History, Geography, and Current Affairs."
   },
   {
     "id": "pyq-nda-2025-math",
@@ -36,7 +36,87 @@
     "exam": "NDA",
     "year": 2025,
     "size": "2.5 MB",
-    "pdfUrl": "/pdfs/pyq/QP-NDANA-II-25-MATHEMATICS-150925.pdf",
-    "description": "Official UPSC NDA (II) 2025 Mathematics question paper with solved and unsolved problems across all key topics."
+    "pdfUrl": "/pdfs/nda-pyqs/QP-NDANA-II-25-MATHEMATICS-150925.pdf",
+    "description": "Official UPSC NDA Mathematics question paper with Algebra, Trigonometry, Geometry, Calculus, and Statistics questions."
+  },
+  {
+    "id": "pyq-nda-ll-2025-gat-answer-key",
+    "title": "NDA (II) 2025 GAT Answer Key",
+    "category": "pyq",
+    "exam": "NDA",
+    "year": 2025,
+    "size": "N/A",
+    "pdfUrl": "/pdfs/nda-pyqs/gat-nda-ll-answer-key25.pdf",
+    "description": "Official UPSC NDA (II) 2025 General Ability Test answer key with correct answers for English, Physics, Chemistry, General Science, History, Geography, and Current Affairs."
+  },
+  {
+    "id": "pyq-nda-ll-2025-maths-answer-key",
+    "title": "NDA (II) 2025 Mathematics Answer Key",
+    "category": "pyq",
+    "exam": "NDA",
+    "year": 2025,
+    "size": "N/A",
+    "pdfUrl": "/pdfs/nda-pyqs/maths-nda-ll-answer-key25.pdf",
+    "description": "Official UPSC NDA (II) 2025 Mathematics answer key with correct solutions covering Algebra, Trigonometry, Geometry, Calculus, and Statistics questions."
+  },
+  {
+    "id": "pyq-nda-1-2025-gat",
+    "title": "NDA (I) 2025 GAT Question Paper",
+    "category": "pyq",
+    "exam": "NDA",
+    "year": 2025,
+    "size": "N/A",
+    "pdfUrl": "/pdfs/nda-pyqs/nda-1-2025-gat.pdf",
+    "description": "Official UPSC NDA question paper covering English, Physics, Chemistry, General Science, History, Geography, and Current Affairs."
+  },
+  {
+    "id": "pyq-nda-1-2025-maths",
+    "title": "NDA (I) 2025 Mathematics Question Paper",
+    "category": "pyq",
+    "exam": "NDA",
+    "year": 2025,
+    "size": "N/A",
+    "pdfUrl": "/pdfs/nda-pyqs/nda-1-2025-maths.pdf",
+    "description": "Official UPSC NDA Mathematics question paper with Algebra, Trigonometry, Geometry, Calculus, and Statistics questions."
+  },
+  {
+    "id": "pyq-nda-2024-gat",
+    "title": "NDA 2024 GAT Question Paper",
+    "category": "pyq",
+    "exam": "NDA",
+    "year": 2024,
+    "size": "N/A",
+    "pdfUrl": "/pdfs/nda-pyqs/nda-2024-gat.pdf",
+    "description": "Official UPSC NDA question paper covering English, Physics, Chemistry, General Science, History, Geography, and Current Affairs."
+  },
+  {
+    "id": "pyq-nda-ll-2024-gat",
+    "title": "NDA (II) 2024 GAT Question Paper",
+    "category": "pyq",
+    "exam": "NDA",
+    "year": 2024,
+    "size": "N/A",
+    "pdfUrl": "/pdfs/nda-pyqs/nda-2024-ll-gat-1.pdf",
+    "description": "Official UPSC NDA question paper covering English, Physics, Chemistry, General Science, History, Geography, and Current Affairs."
+  },
+  {
+    "id": "pyq-nda-ll-2024-maths",
+    "title": "NDA (II) 2024 Mathematics Question Paper",
+    "category": "pyq",
+    "exam": "NDA",
+    "year": 2024,
+    "size": "N/A",
+    "pdfUrl": "/pdfs/nda-pyqs/nda-2024-ll-maths.pdf",
+    "description": "Official UPSC NDA Mathematics question paper with Algebra, Trigonometry, Geometry, Calculus, and Statistics questions."
+  },
+  {
+    "id": "pyq-nda-2024-maths",
+    "title": "NDA 2024 Mathematics Question Paper",
+    "category": "pyq",
+    "exam": "NDA",
+    "year": 2024,
+    "size": "N/A",
+    "pdfUrl": "/pdfs/nda-pyqs/nda-2024-maths.pdf",
+    "description": "Official UPSC NDA Mathematics question paper with Algebra, Trigonometry, Geometry, Calculus, and Statistics questions."
   }
 ]

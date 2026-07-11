@@ -27,6 +27,14 @@ const urls = [
   "/test-series",
 ];
 
+const downloadsPath = path.join(rootDir, "src", "data", "downloads.json");
+const downloadsData = JSON.parse(fs.readFileSync(downloadsPath, "utf8"));
+for (const item of downloadsData) {
+  if (item?.pdfUrl) {
+    urls.push(item.pdfUrl);
+  }
+}
+
 const blogsDir = path.join(rootDir, "src", "blogs");
 for (const file of fs.readdirSync(blogsDir).filter((name) => name.endsWith(".json")).sort()) {
   const data = JSON.parse(fs.readFileSync(path.join(blogsDir, file), "utf8"));
