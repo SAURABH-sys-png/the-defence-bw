@@ -5,5 +5,24 @@
   "datetime": "2026-05-25",
   "readTime": "5 min read",
   "author": "DefenceRoger Editorial",
-  "data": "A comparison between entering the Armed Forces post-12th via NDA vs post-graduation via CDS. NDA offers 3 years of academic training at Khadakwasla followed by 1 year at service academies (IMA/INA/AFA), granting a solid foundation at an early age. CDS offers direct 1 to 1.5 years of intensive training at service academies. NDA is ideal for early decision-makers, while CDS caters to graduates seeking a direct, shorter path to commission. Both lead to the prestigious rank of Lieutenant or equivalent."
+  "data": "A comparison between entering the Armed Forces post-12th via NDA vs post-graduation via CDS. NDA offers 3 years of academic training at Khadakwasla followed by 1 year at service academies (IMA/INA/AFA), granting a solid foundation at an early age. CDS offers direct 1 to 1.5 years of intensive training at service academies. NDA is ideal for early decision-makers, while CDS caters to graduates seeking a direct, shorter path to commission. Both lead to the prestigious rank of Lieutenant or equivalent.",
+  "excerpt": "A comparison between entering the Armed Forces post-12th via NDA vs post-graduation via CDS. NDA offers 3 years of academic training at Khadakwasla followed by 1 year at service...",
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "A comparison between entering the Armed Forces post-12th via NDA vs post-graduation via CDS."
+    },
+    {
+      "type": "paragraph",
+      "text": "NDA offers 3 years of academic training at Khadakwasla followed by 1 year at service academies (IMA/INA/AFA), granting a solid foundation at an early age."
+    },
+    {
+      "type": "paragraph",
+      "text": "CDS offers direct 1 to 1.5 years of intensive training at service academies. NDA is ideal for early decision-makers, while CDS caters to graduates seeking a direct, shorter path to commission."
+    },
+    {
+      "type": "paragraph",
+      "text": "Both lead to the prestigious rank of Lieutenant or equivalent."
+    }
+  ]
 }

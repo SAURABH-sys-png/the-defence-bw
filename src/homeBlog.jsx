@@ -28,6 +28,7 @@ export default function BlogBody() {
     const matchesSearch =
       (blog.title &&
         blog.title.toLowerCase().includes(searchTerm.toLowerCase())) ||
+      (blog.excerpt && blog.excerpt.toLowerCase().includes(searchTerm.toLowerCase())) ||
       (blog.data && blog.data.toLowerCase().includes(searchTerm.toLowerCase()));
 
     const matchesCategory =
@@ -168,7 +169,7 @@ export default function BlogBody() {
                     </h3>
 
                     <p className="text-slate-600 text-xs md:text-sm line-clamp-3 leading-relaxed">
-                      {blog.data}
+                      {blog.excerpt || blog.data}
                     </p>
                   </div>
 
